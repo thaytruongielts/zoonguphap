@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Ngữ Pháp Lớp 5: Visiting a Zoo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section-title {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+        }
+        .question p {
+            font-weight: bold;
+            color: #555;
+        }
+        .answer-input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .check-btn {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .check-btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #28a745;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .choices {
+            margin-top: 10px;
+            display: none;
+        }
+        .choices button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            text-align: left;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .choices button:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bài Tập Ngữ Pháp và Từ Vựng</h1>
+        <p>
+            Dựa vào bài đọc "Visiting a zoo", hãy hoàn thành các bài tập dưới đây.
+        </p>
+
+        <h2 class="section-title">Chủ ngữ và Động từ</h2>
+
+        <div class="question" id="q1">
+            <p>1. Trong câu "I went to the zoo with my grandfathers.", chủ ngữ là gì?</p>
+            <input type="text" class="answer-input" id="input1" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(1)">Check</button>
+            <div class="result" id="result1"></div>
+            <div class="choices" id="choices1">
+                <button onclick="checkMultipleChoice(1, 'A')">A) the zoo</button>
+                <button onclick="checkMultipleChoice(1, 'B')">B) I</button>
+                <button onclick="checkMultipleChoice(1, 'C')">C) my grandfathers</button>
+                <button onclick="checkMultipleChoice(1, 'D')">D) went</button>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <p>2. Trong câu "We visited the zoo for about 3 hours.", từ "visited" là động từ ở thì gì?</p>
+            <input type="text" class="answer-input" id="input2" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(2)">Check</button>
+            <div class="result" id="result2"></div>
+            <div class="choices" id="choices2">
+                <button onclick="checkMultipleChoice(2, 'A')">A) Hiện tại đơn (Present Simple)</button>
+                <button onclick="checkMultipleChoice(2, 'B')">B) Quá khứ đơn (Past Simple)</button>
+                <button onclick="checkMultipleChoice(2, 'C')">C) Hiện tại tiếp diễn (Present Continuous)</button>
+                <button onclick="checkMultipleChoice(2, 'D')">D) Tương lai đơn (Future Simple)</button>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Từ vựng</h2>
+
+        <div class="question" id="q3">
+            <p>3. Từ "spectacular" trong bài đọc có nghĩa là gì?</p>
+            <input type="text" class="answer-input" id="input3" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(3)">Check</button>
+            <div class="result" id="result3"></div>
+            <div class="choices" id="choices3">
+                <button onclick="checkMultipleChoice(3, 'A')">A) bình thường, tầm thường</button>
+                <button onclick="checkMultipleChoice(3, 'B')">B) ngoạn mục, ấn tượng</button>
+                <button onclick="checkMultipleChoice(3, 'C')">C) buồn tẻ, chán nản</button>
+                <button onclick="checkMultipleChoice(3, 'D')">D) nhỏ bé, đơn giản</button>
+            </div>
+        </div>
+
+        <div class="question" id="q4">
+            <p>4. Từ "basking" trong câu "We saw the crocodiles basking in the sun." có nghĩa là gì?</p>
+            <input type="text" class="answer-input" id="input4" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(4)">Check</button>
+            <div class="result" id="result4"></div>
+            <div class="choices" id="choices4">
+                <button onclick="checkMultipleChoice(4, 'A')">A) bơi lội</button>
+                <button onclick="checkMultipleChoice(4, 'B')">B) nằm tắm nắng</button>
+                <button onclick="checkMultipleChoice(4, 'C')">C) ăn uống</button>
+                <button onclick="checkMultipleChoice(4, 'D')">D) ngủ</button>
+            </div>
+        </div>
+
+        <h2 class="section-title">Cấu trúc câu hỏi "Ở đâu?"</h2>
+
+        <div class="question" id="q5">
+            <p>5. Để hỏi "Con cá sấu đang ở đâu?", bạn sẽ hỏi như thế nào?</p>
+            <input type="text" class="answer-input" id="input5" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(5)">Check</button>
+            <div class="result" id="result5"></div>
+            <div class="choices" id="choices5">
+                <button onclick="checkMultipleChoice(5, 'A')">A) What are the crocodiles?</button>
+                <button onclick="checkMultipleChoice(5, 'B')">B) Where are the crocodiles?</button>
+                <button onclick="checkMultipleChoice(5, 'C')">C) Who are the crocodiles?</button>
+                <button onclick="checkMultipleChoice(5, 'D')">D) How are the crocodiles?</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const answers = {
+            1: {
+                correct: "I",
+                choices: {
+                    A: "the zoo",
+                    B: "I",
+                    C: "my grandfathers",
+                    D: "went"
+                },
+                correctChoice: 'B'
+            },
+            2: {
+                correct: "Quá khứ đơn",
+                choices: {
+                    A: "Hiện tại đơn (Present Simple)",
+                    B: "Quá khứ đơn (Past Simple)",
+                    C: "Hiện tại tiếp diễn (Present Continuous)",
+                    D: "Tương lai đơn (Future Simple)"
+                },
+                correctChoice: 'B'
+            },
+            3: {
+                correct: "ngoạn mục, ấn tượng",
+                choices: {
+                    A: "bình thường, tầm thường",
+                    B: "ngoạn mục, ấn tượng",
+                    C: "buồn tẻ, chán nản",
+                    D: "nhỏ bé, đơn giản"
+                },
+                correctChoice: 'B'
+            },
+            4: {
+                correct: "nằm tắm nắng",
+                choices: {
+                    A: "bơi lội",
+                    B: "nằm tắm nắng",
+                    C: "ăn uống",
+                    D: "ngủ"
+                },
+                correctChoice: 'B'
+            },
+            5: {
+                correct: "Where are the crocodiles?",
+                choices: {
+                    A: "What are the crocodiles?",
+                    B: "Where are the crocodiles?",
+                    C: "Who are the crocodiles?",
+                    D: "How are the crocodiles?"
+                },
+                correctChoice: 'B'
+            }
+        };
+
+        function checkAnswer(questionNumber) {
+            const input = document.getElementById(`input${questionNumber}`);
+            const resultDiv = document.getElementById(`result${questionNumber}`);
+            const choicesDiv = document.getElementById(`choices${questionNumber}`);
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = answers[questionNumber].correct.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                resultDiv.innerHTML = "🎉 Tuyệt vời! Bạn đã trả lời đúng.";
+                resultDiv.className = "result correct";
+                choicesDiv.style.display = 'none';
+            } else {
+                resultDiv.innerHTML = "Chưa đúng. Vui lòng chọn một trong các đáp án sau:";
+                resultDiv.className = "result incorrect";
+                choicesDiv.style.display = 'block';
+            }
+        }
+
+        function checkMultipleChoice(questionNumber, choice) {
+            const resultDiv = document.getElementById(`result${questionNumber}`);
+            const choicesDiv = document.getElementById(`choices${questionNumber}`);
+            const correctChoice = answers[questionNumber].correctChoice;
+
+            const buttons = choicesDiv.getElementsByTagName('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('correct-choice', 'incorrect-choice');
+                if (buttons[i].textContent.startsWith(choice)) {
+                    if (choice === correctChoice) {
+                        buttons[i].classList.add('correct-choice');
+                    } else {
+                        buttons[i].classList.add('incorrect-choice');
+                    }
+                }
+            }
+
+            if (choice === correctChoice) {
+                resultDiv.innerHTML = "🎉 Chúc mừng! Bạn đã chọn đáp án đúng.";
+                resultDiv.className = "result correct";
+            } else {
+                resultDiv.innerHTML = "Chưa đúng. Hãy thử lại.";
+                resultDiv.className = "result incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
